@@ -1,3 +1,10 @@
+/**
+ * Java 1. Homework 4
+ *
+ * @author Marina Dumcheva
+ * @version 18.11.2021
+ */
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -89,10 +96,10 @@ class Homework_4 {
 // Сheking winning
     boolean checkWin(char ch) {
     for (int x = 0; x < 3; x++) {
-        if ((table[0][x] == ch && table[1][x] == ch && table[2][x] == ch)||    // Check vertiсals
-            (table[x][0] == ch && table [x][1]==ch && table[x][2] == ch)) {    // Check horizontals
+        if ((table[0][x] == ch && table[1][x] == ch && table[2][x] == ch) ||    // Check vertiсals
+            (table[x][0] == ch && table[x][1] == ch && table[x][2] == ch)) {    // Check horizontals
             return true;
-            }
+        }
     }
 
     if (table[0][0] == ch && table[1][1] == ch && table[2][2] == ch) return true;
