@@ -65,9 +65,8 @@ class Cat {
     }
 
     void eat(Plate plate) {
-        if (this.satiety == false && plate.food >= appetite) {
-            plate.decreaseFood(appetite);
-            this.satiety = true;
+        if (!satiety) {
+            this.satiety = plate.decreaseFood(appetite);
         }
     }
 
@@ -83,8 +82,13 @@ class Plate {
         this.food = food;
     }
 
-    void decreaseFood(int appetite) {
-            this.food -= appetite;
+    boolean decreaseFood(int appetite) {
+            if (this.food < appetite) {
+                return false;
+            } else {
+                this.food -= appetite;
+                return true;
+            }
     }
 
     void addFood() {
